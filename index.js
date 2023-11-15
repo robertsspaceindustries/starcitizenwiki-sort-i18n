@@ -8,6 +8,7 @@ if (!inputPath) throw new Error("Couldn't find input file");
 if (path.extname(inputPath) !== ".json") throw new Error("Wrong file extension");
 
 const json = JSON.parse(fs.readFileSync(inputPath, "utf-8"));
+
 json.data = json.data.sort(function (a, b) {
 	var nameA = a[0].toUpperCase();
 	var nameB = b[0].toUpperCase();
